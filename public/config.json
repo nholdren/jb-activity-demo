@@ -8,7 +8,7 @@
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "Template",
+            "name": "True Split",
           "description": "A true audience split",
           "step1Label": "Configure Activity"
         }
@@ -21,7 +21,7 @@
                 }
 			],
           "outArguments": [],
-          "url": "https://<your-domain-here>/journeybuilder/execute",
+          "url": "https://jb-activity-demo/journeybuilder/execute",
            "verb": "POST",
             "body": "",
             "header": "",
@@ -31,24 +31,24 @@
         }
     },
     "configurationArguments": {
-      "applicationExtensionKey": "__application_key_from_appcenter_here__",
+      "applicationExtensionKey": "9c307924-906e-48dc-ae40-041875823748",
       "save": {
-        "url": "https://<your-domain-here>/journeybuilder/save",
+        "url": "https://jb-activity-demo/journeybuilder/save",
           "verb": "POST",
         "useJwt": true
        },
        "publish": {
-        "url": "https://<your-domain-here>/journeybuilder/publish",
+        "url": "https://jb-activity-demo/journeybuilder/publish",
            "verb": "POST",
         "useJwt": true
        },
       "stop": {
-        "url": "https://<your-domain-here>/journeybuilder/stop",
+        "url": "https://jb-activity-demo/journeybuilder/stop",
            "verb": "POST",
         "useJwt": true
       },
       "validate": {
-        "url": "https://<your-domain-here>/journeybuilder/validate",
+        "url": "https://jb-activity-demo/journeybuilder/validate",
         "verb": "POST",
         "useJwt": true
       }
