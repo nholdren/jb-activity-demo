@@ -92,7 +92,7 @@ exports.execute = function (req, res) {
             var options = {
               hostname: 'slack.com',
               port: 443,
-              path: '/api/chat.postMessage?token=' + process.env.slack_key + '&channel=' + decodedArgs.slack_username + '&text=' + encodeURIComponent(decodedArgs.slack_message) + '&pretty=1',
+              path: '/api/chat.postMessage?token=' + process.env.slack_key + '&channel=' + encodeURIComponent(decodedArgs.slack_username) + '&text=' + encodeURIComponent(decodedArgs.slack_message) + '&pretty=1',
               method: 'POST',
               headers: {
                    'Content-Type': 'application/x-www-form-urlencoded',
