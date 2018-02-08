@@ -91,7 +91,7 @@ define([
             "postcardURL": postcardURLValue,
             "postcardText": postcardTextValue,
             "tokens": authTokens,
-            "message" :
+            "message" : "This is a test",
             "username": "{{Contact.Attribute.Slack.Username}}",
             "firstName": "{{Contact.Attribute.PostcardJourney.FirstName}}",
             "lastName": "{{Contact.Attribute.PostcardJourney.LastName}}",
