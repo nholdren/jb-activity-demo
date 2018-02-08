@@ -19,7 +19,7 @@
 				{
                     "emailAddress": "{{Contact.Attribute.CustomActivity.EmailAddress}}",
                     "slack_message" : "This is a test slack message",
-                    "slack_username" : "{{Contact.Attribute.Slack.SlackUsername}}"
+                    "slack_username" : "{{Contact.Attribute.Slack_Usernames.SlackUsername}}"
                 }
 			],
           "outArguments": [],
