@@ -87,6 +87,8 @@ exports.execute = function (req, res) {
             // decoded in arguments
             var decodedArgs = decoded.inArguments[0];
 
+            console.log("Slack Username: " + decodedArgs.slack_username);
+
             var options = {
               hostname: 'slack.com',
               port: 443,
