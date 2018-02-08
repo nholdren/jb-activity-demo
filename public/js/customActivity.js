@@ -77,14 +77,13 @@ define([
     }
 
     function save() {
-        var postcardURLValue = $('#postcard-url').val();
-        var postcardTextValue = $('#postcard-text').val();
+        var slack_message = $('#slack_message').val();
 
         payload['arguments'].execute.inArguments = [{
             "postcardURL": postcardURLValue,
             "postcardText": postcardTextValue,
             "tokens": authTokens,
-            "message" : "This is a test",
+            "slack_message" : slack_message,
             "username": "{{Contact.Attribute.Slack.Username}}",
             "firstName": "{{Contact.Attribute.PostcardJourney.FirstName}}",
             "lastName": "{{Contact.Attribute.PostcardJourney.LastName}}",
