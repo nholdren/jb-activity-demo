@@ -80,19 +80,8 @@ define([
         var slack_message = $('#slack_message').val();
 
         payload['arguments'].execute.inArguments = [{
-            "postcardURL": postcardURLValue,
-            "postcardText": postcardTextValue,
             "tokens": authTokens,
-            "slack_message" : slack_message,
-            "username": "{{Contact.Attribute.Slack.Username}}",
-            "firstName": "{{Contact.Attribute.PostcardJourney.FirstName}}",
-            "lastName": "{{Contact.Attribute.PostcardJourney.LastName}}",
-            "address1": "{{Contact.Attribute.PostcardJourney.Address1}}",
-            "address2": "{{Contact.Attribute.PostcardJourney.Address2}}",
-            "city": "{{Contact.Attribute.PostcardJourney.City}}",
-            "state": "{{Contact.Attribute.PostcardJourney.State}}",
-            "zipcode": "{{Contact.Attribute.PostcardJourney.PostalCode}}",
-            "country": "{{Contact.Attribute.PostcardJourney.Country}}"
+            "slack_message" : slack_message
         }];
 
         payload['metaData'].isConfigured = true;
