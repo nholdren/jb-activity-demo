@@ -51,16 +51,9 @@ define([
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
 
-                if (key === 'postcardURL')
+                if (key === 'slack_message')
                 {
-                    $('#postcard-url').val(val);
-                    $('.postcard-preview-content').css('background-image',"url('"+$('#postcard-url').val()+"')");
-                }
-
-                if (key === 'postcardText')
-                {
-                    $('#postcard-text').val(val);
-                    $('#postcard-preview-text').html($('#postcard-text').val());
+                    $('#slack_message').val(val);
                 }
             });
         });
