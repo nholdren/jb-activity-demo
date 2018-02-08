@@ -3,13 +3,13 @@
     "metaData": {
         "icon": "images/icon.png",
         "iconSmall": "images/iconSmall.png",
-        "category": "flow control"
+        "category": "message"
     },
-    "type": "RestDecision",
+    "type": "REST",
     "lang": {
         "en-US": {
-            "name": "True Split",
-          "description": "A true audience split",
+            "name": "Slack Message",
+          "description": "Notify a your team via Slack",
           "step1Label": "Configure Activity"
         }
     },
@@ -21,7 +21,7 @@
                 }
 			],
           "outArguments": [],
-          "url": "https://jb-activity-demo/journeybuilder/execute",
+          "url": "https://jb-activity-demo.herokuapp.com/journeybuilder/execute",
            "verb": "POST",
             "body": "",
             "header": "",
@@ -33,22 +33,22 @@
     "configurationArguments": {
       "applicationExtensionKey": "9c307924-906e-48dc-ae40-041875823748",
       "save": {
-        "url": "https://jb-activity-demo/journeybuilder/save",
+        "url": "https://jb-activity-demo.herokuapp.com/journeybuilder/save",
           "verb": "POST",
         "useJwt": true
        },
        "publish": {
-        "url": "https://jb-activity-demo/journeybuilder/publish",
+        "url": "https://jb-activity-demo.herokuapp.com/journeybuilder/publish",
            "verb": "POST",
         "useJwt": true
        },
       "stop": {
-        "url": "https://jb-activity-demo/journeybuilder/stop",
+        "url": "https://jb-activity-demo.herokuapp.com/journeybuilder/stop",
            "verb": "POST",
         "useJwt": true
       },
       "validate": {
-        "url": "https://jb-activity-demo/journeybuilder/validate",
+        "url": "https://jb-activity-demo.herokuapp.com/journeybuilder/validate",
         "verb": "POST",
         "useJwt": true
       }
@@ -70,28 +70,5 @@
                 "outArguments": []
             }
         }
-    },
-    "outcomes": [
-    {
-        "arguments": {
-            "branchResult": "buy_item",
-            "some argument": "passed from config.json for buy_item"
-        }
-    },
-    {
-        "arguments": {
-            "branchResult": "sell_item",
-            "some argument": "passed from config.json for sell_item"
-        }
-    },
-    {
-        "arguments": {
-            "branchResult": "hold_item",
-            "some argument": "passed from config.json for hold_item"
-        },
-        "metaData": {
-            "label": "MyCustomLabel"
-        }
     }
-]
 }

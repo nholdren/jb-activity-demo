@@ -9,7 +9,7 @@ define([
     var authTokens = {};
     var payload = {};
     var lastStepEnabled = false;
-    var steps = [ 
+    var steps = [
        { "label": "Configure Postcard", "key": "step1" }
     ];
     var currentStep = steps[0].key;
@@ -21,7 +21,7 @@ define([
     connection.on('requestedEndpoints', onGetEndpoints);
 
     connection.on('clickedNext', save);
-   
+
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
         connection.trigger('ready');
@@ -36,7 +36,7 @@ define([
         if (data) {
             payload = data;
         }
-        
+
         var hasInArguments = Boolean(
             payload['arguments'] &&
             payload['arguments'].execute &&
@@ -50,7 +50,7 @@ define([
 
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
-                
+
                 if (key === 'postcardURL')
                 {
                     $('#postcard-url').val(val);
@@ -91,7 +91,8 @@ define([
             "postcardURL": postcardURLValue,
             "postcardText": postcardTextValue,
             "tokens": authTokens,
-            "emailAddress": "{{Contact.Attribute.PostcardJourney.EmailAddress}}",
+            "message" :
+            "username": "{{Contact.Attribute.Slack.Username}}",
             "firstName": "{{Contact.Attribute.PostcardJourney.FirstName}}",
             "lastName": "{{Contact.Attribute.PostcardJourney.LastName}}",
             "address1": "{{Contact.Attribute.PostcardJourney.Address1}}",
@@ -101,7 +102,7 @@ define([
             "zipcode": "{{Contact.Attribute.PostcardJourney.PostalCode}}",
             "country": "{{Contact.Attribute.PostcardJourney.Country}}"
         }];
-        
+
         payload['metaData'].isConfigured = true;
 
         console.log(payload);
