@@ -18,7 +18,8 @@
            "inArguments":[
 				{
                     "emailAddress": "{{Contact.Attribute.CustomActivity.EmailAddress}}",
-                    "slack_message" : "This is a test slack message"
+                    "slack_message" : "This is a test slack message",
+                    "slack_username" : "{{Contact.Attribute.CustomActivity.Username}}"
                 }
 			],
           "outArguments": [],

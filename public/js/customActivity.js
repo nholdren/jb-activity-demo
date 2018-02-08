@@ -81,7 +81,8 @@ define([
 
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
-            "slack_message" : slack_message
+            "slack_message" : slack_message,
+            "user" : "{{Contact.Attribute.Slack_Usernames.SlackUsername}}"
         }];
 
         payload['metaData'].isConfigured = true;
