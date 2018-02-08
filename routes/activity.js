@@ -83,10 +83,29 @@ exports.execute = function (req, res) {
         }
 
         if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
-            
+
             // decoded in arguments
             var decodedArgs = decoded.inArguments[0];
-            
+
+            var options = {
+              hostname: 'slack.com',
+              port: 443,
+              path: '/api/chat.postMessage?token=xoxp-214058437601-227335259955-311723676309-26bb6a1cbe385c1bbf94579cccb39c79&channel=@nholdren&text=Hello%20world&pretty=1',
+              method: 'POST',
+              headers: {
+                   'Content-Type': 'application/x-www-form-urlencoded',
+                 }
+            };
+
+            var slack_req = https.request(options, (slack_res) => {
+              console.log('statusCode:', slack_res.statusCode);
+              console.log('headers:', slack_res.headers);
+
+              res.on('data', (d) => {
+                process.stdout.write(d);
+              });
+            });
+
             logData(req);
             res.send(200, 'Execute');
         } else {
