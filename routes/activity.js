@@ -90,21 +90,28 @@ exports.execute = function (req, res) {
             var options = {
               hostname: 'slack.com',
               port: 443,
-              path: '/api/chat.postMessage?token=xoxp-214058437601-227335259955-311723676309-26bb6a1cbe385c1bbf94579cccb39c79&channel=@nholdren&text=Hello%20world&pretty=1',
+              path: '/api/chat.postMessage?token=' + process.env.slack_key + '&channel=@nholdren&text=Hello%20world&pretty=1',
               method: 'POST',
               headers: {
                    'Content-Type': 'application/x-www-form-urlencoded',
                  }
             };
 
-            var slack_req = https.request(options, (slack_res) => {
+            var slack_req = http.request(options, (slack_res) => {
               console.log('statusCode:', slack_res.statusCode);
               console.log('headers:', slack_res.headers);
 
-              res.on('data', (d) => {
-                process.stdout.write(d);
+              slack_res.on('data', (d) => {
+                console.log(d);
               });
             });
+
+            slack_req.on('error', (e) => {
+              console.error(e);
+            });
+
+
+            slack_req.end();
 
             logData(req);
             res.send(200, 'Execute');
